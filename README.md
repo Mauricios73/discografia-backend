@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gerenciador de Discografia da dupla Tião Carreiro e Pardinho -
 
 ## Desenvolvido em Laravel 10
@@ -55,6 +54,4 @@ feito isto, basta iniciar o servidor através do comando, na pasta raiz do back-
 php artisan serve
 ```
 pronto, o backend da aplicação estará funcionando!
-=======
-# discografia-backend
->>>>>>> a35cd995b06461a34f22505775fd52363150cc0c
+
