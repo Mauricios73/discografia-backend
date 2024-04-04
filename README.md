@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# Gerenciador de Discografia da dupla Tião Carreiro e Pardinho -
-
-## Desenvolvido em Laravel 10
+# Gerenciador de Discografia da dupla Tião Carreiro e Pardinho
 
 # Gerenciamentos
 
@@ -22,26 +19,25 @@
 
 #
 
-## instalação
+## Instalação
 
-- ferramentas necessárias:
+- Ferramentas necessárias:
     - composer;
     - PHP 8+;
     - banco de dados Mysql;
-    - nodeJS;
 
-primeiramente faça o clone deste projeto, o mesmo já possui o front e o back no mesmo repósitório:
+Primeiramente faça o clone deste projeto:
 ```
-https://github.com/Mauricios73/Discografia-back.git
+https://github.com/Mauricios73/discografia-backend.git
 ```
 ### <b>Back-End</b><br>
-navege até a pasta ```/Discografia-back```, onde será necessário iniciar o composer:
+Navege até a pasta ```/Discografia-back```, onde será necessário iniciar o composer:
 ```
 composer install
 ```
-depois, vá até o arquivo ```.env.example```, crie uma cópia e renomeie apenas para ```.env``` e abra-o:
+Depois, vá até o arquivo ```.env.example```, crie uma cópia e renomeie apenas para ```.env``` e abra-o:
 
-procure a seção do ```.env``` contendo os dados de acesso ao banco, e informe as credenciais do seu banco:
+Procure a seção do ```.env``` contendo os dados de acesso ao banco, e informe as credenciais do seu banco:
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -50,11 +46,9 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-feito isto, basta iniciar o servidor através do comando, na pasta raiz do back-end:
+Feito isto, basta iniciar o servidor através do comando, na pasta raiz do back-end:
 ```
 php artisan serve
 ```
-pronto, o backend da aplicação estará funcionando!
-=======
-# discografia-backend
->>>>>>> a35cd995b06461a34f22505775fd52363150cc0c
+Pronto, o backend da aplicação estará funcionando!
+
