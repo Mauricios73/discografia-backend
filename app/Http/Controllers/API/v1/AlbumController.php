@@ -20,6 +20,7 @@ class AlbumController extends Controller
                 $album->tracks          = $tracks;
                 $albums[]               = $album;
             }
+            \Log::info('Albums: ' . json_encode($albums));
             return response()->json(['error'=>false,'message'=>'','data'=>$albums],200);
         }catch(\Exception $e){
             return response()->json(['error'=>true,'message'=>$e->getmessage(),'data'=>''],500);
@@ -31,9 +32,11 @@ class AlbumController extends Controller
         try{
             DB::beginTransaction();
             $request->validate([
-                'artist_id',
-                'name',
-                'release_date',
+                'name' => 'required|string|max:255',
+                'Artista' => 'required|string|max:255',
+                'Ano' => 'required|integer',
+                'LinkImagemCapa' => 'nullable|url',
+                
             ]);
             $return = Album::create($request->all());
             DB::commit();
@@ -49,13 +52,11 @@ class AlbumController extends Controller
             DB::beginTransaction();
             $request->validate([
                 'name',
-                'release_date',
+                
             ]);
             $album               = Album::findOrFail($id);
             $request             = $request->all();
-            $album->release_date = $request['release_date'];
             $album->name         = $request['name'];
-            $album->artist_id    = $request['artist_id'];
             $album->save();
             DB::commit();
             return response()->json(['error'=>false,'message'=>'','data'=>$album],200);

@@ -11,15 +11,19 @@ class Album extends Model
     public $timestamps = false;
     protected $fillable = [
         'name',
-        'release_date',
         'artist_id',
+        'name',
+        'Artista',
+        'Ano',
+        'LinkImagemCapa',
     ];
+    
     public function artist()
     {
-        $this->belongsTo(Artist::class);
+       return $this->belongsTo(Artist::class);
     }
     public function tracks()
     {
-        $this->hasMany(Track::class);
+        return $this->hasMany(Track::class);
     }
 }

@@ -20,8 +20,9 @@ class TrackController extends Controller
             DB::beginTransaction();
             $request->validate([
                 'name',
-                'release_date',
                 'duration',
+                'album_id',
+                'artista',
             ]);
             $return = Track::create($request->all());
             DB::commit();
@@ -37,17 +38,16 @@ class TrackController extends Controller
             DB::beginTransaction();
             $request->validate([
                 'name',
-                'release_date',
                 'duration',
-                'album_order',
+                'album_id',
+                'artista',
             ]);
             $track               = Track::findOrFail($id);
             $request             = $request->all();
-            $track->release_date = $request['release_date'];
-            $track->album_order  = $request['album_order'];
             $track->name         = $request['name'];
             $track->duration     = $request['duration'];
-            $track->artist_id    = $request['artist_id'];
+            $track->album_id     = $request['album_id'];
+            $track->artista      = $request['artista'];
             $track->save();
             DB::commit();
             return response()->json(['error'=>false,'message'=>'','data'=>$track],200);
